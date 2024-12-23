@@ -1,10 +1,8 @@
-
-
 <script lang="ts">
+	import Nav from '$lib/components/Nav.svelte';
 	import '../app.css';
 	import type { Task } from '../types';
 
-	import Nav from './components/Nav.svelte';
 	let { children } = $props();
 
 	let tasks: Task[] = [];

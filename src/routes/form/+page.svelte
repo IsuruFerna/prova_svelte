@@ -1,26 +1,24 @@
 <script lang="ts">
 	import type { Task } from "../../types";
-
-    let { tasks } = $props();
+    import { tasks } from "../../shared";
+    // let { tasks } = $props();
     let task: Task = $state({
         name:"",
         task:"",
         done: false
     })
 
-    console.log("this is task: ", task.name, task.task)
-
     const handleSubmit = (e:SubmitEvent) => {
         e.preventDefault();
         // tasks = [...tasks, {...task}];
-        tasks.push({...task});
+        $tasks.push({...task});
         task = {
             name: "",
             task: "",
             done: false
         }
 
-        console.log("these are tasks: ", tasks);
+        console.log("these are tasks: ", $tasks);
     }
 
 
