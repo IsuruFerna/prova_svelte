@@ -1,7 +1,14 @@
 <script lang="ts">
-	import type { Task } from "../types";
+    import Card from "$lib/components/Card.svelte";
     import CardContainer from "../lib/components/CardContainer.svelte";
-    import { tasks } from "../shared";
+
+    import { tasksState } from "../shared.svelte";
+
 </script>
 
-<CardContainer />
+<!-- <CardContainer /> -->
+
+{#each tasksState as task, index (index)}
+    <Card {task} />
+{/each}
+

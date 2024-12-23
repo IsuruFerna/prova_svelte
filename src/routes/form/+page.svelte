@@ -1,6 +1,8 @@
 <script lang="ts">
 	import type { Task } from "../../types";
     import { tasks } from "../../shared";
+    import { tasksState } from "../../shared.svelte";
+
     // let { tasks } = $props();
     let task: Task = $state({
         name:"",
@@ -11,7 +13,8 @@
     const handleSubmit = (e:SubmitEvent) => {
         e.preventDefault();
         // tasks = [...tasks, {...task}];
-        $tasks.push({...task});
+        // $tasks.push({...task});
+        tasksState.push(task);
         task = {
             name: "",
             task: "",
